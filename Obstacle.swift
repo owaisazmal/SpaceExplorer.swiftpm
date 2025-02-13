@@ -11,9 +11,9 @@ class Obstacle: SKSpriteNode {
         let texture = SKTexture(imageNamed: "obstacle")
         super.init(texture: texture, color: .clear, size: texture.size())
         self.physicsBody = SKPhysicsBody(texture: texture, size: self.size)
-        self.physicsBody?.isDynamic = false // Obstacles may not need to move dynamically
+        self.physicsBody?.isDynamic = false
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

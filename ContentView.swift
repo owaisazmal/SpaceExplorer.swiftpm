@@ -3,9 +3,10 @@ import SpriteKit
 
 struct ContentView: View {
     var body: some View {
-        // Embedding the custom SpriteKit scene within the SwiftUI environment
-        SpriteView(scene: GameScene())
-            .frame(width: 300, height: 500) // Defines the view size for the game
-            .edgesIgnoringSafeArea(.all) // Ensures the view expands to the entire available screen
+        let scene = GameScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)) // Use screen size
+        scene.scaleMode = .fill
+
+        return SpriteView(scene: scene)
+            .ignoresSafeArea() // Use ignoresSafeArea instead of edgesIgnoringSafeArea
     }
 }
