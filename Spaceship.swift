@@ -9,7 +9,9 @@ import SpriteKit
 
 class Spaceship: SKSpriteNode {
     init() {
+        
         let texture = SKTexture(imageNamed: "spaceship") // Load the spaceship image as a texture
+        print("Spaceship texture: \(texture)") // Check if texture is nil
         super.init(texture: texture, color: .clear, size: texture.size()) // Initialize the sprite node with the texture
         self.name = "spaceship"
         self.physicsBody = SKPhysicsBody(texture: texture, size: self.size) // Assign a physics body to the sprite for collision detection
